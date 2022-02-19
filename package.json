@@ -1,0 +1,40 @@
+{
+  "name": "sluxipos_back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "convert-excel-to-json": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "excel4node": "^1.7.2",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.1.0",
+    "node-thermal-printer": "^4.1.2",
+    "nodemon": "^2.0.6",
+    "pg": "^8.3.0",
+    "printer": "^0.4.0",
+    "sequelize": "^5.22.3",
+    "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1",
+    "usb-barcode-scanner": "^1.0.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
