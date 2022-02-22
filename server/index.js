@@ -5,7 +5,6 @@ const socketIO   = require("socket.io")
 const express    = require('express')
 const Http       = require('http') 
 const Middleware = require('../middlewares')
-const models     = require("../models/index"); 
 const CustomError = require('../middlewares/error-handling')
 
 module.exports = function() {
@@ -25,9 +24,6 @@ module.exports = function() {
 		server.use('/static',express.static(__basedir+'/uploads'))
 		server.use('/download',express.static(__basedir+'/download'))
  
-		// Setup Database
-		models.sequelize.sync()
-		logger.info('✌ ================ Database Loaded ==================')
  
 		Middleware(server)
  

@@ -9,17 +9,14 @@ var fs = require('fs');
 var path = require('path')
 
 const Upload = require('../helpers/upload')
-const Authenticator = require('../middlewares/auth-middleware')
 const CustomError = require('../middlewares/error-handling')
 
-const DataExport = require('../helpers/export')
-const dataExport = new DataExport;
+// const DataExport = require('../helpers/export')
+// const dataExport = new DataExport;
 
-const DatabaseFunc = require('../helpers/crud');
 const { connect } = require("tls");
-const crudService = new DatabaseFunc;
 
-router.post("/import", [Upload.single('file'), Authenticator.auth], asyncWrapper(async(req, res) => {
+router.post("/import", [Upload.single('file')], asyncWrapper(async(req, res) => {
     let body = req.body
     let result = excelToJson({
         sourceFile:  path.resolve(__dirname, '..', 'uploads',req.file.filename),
@@ -84,29 +81,29 @@ router.post("/import", [Upload.single('file'), Authenticator.auth], asyncWrapper
         res.send({message: 'Result'});
     }
 }))
-router.post("/download",[Authenticator.auth], asyncWrapper(async(req, res)=> {
-    let body = req.body;
-    let data;
-    let business = await crudService.findOne('Business', {id: 1});
-    if(business == null){
-        throw CustomError({statusCode: 422, message: 'Set business infomation before export'}, res)
-    }
+// router.post("/download",[Authenticator.auth], asyncWrapper(async(req, res)=> {
+//     let body = req.body;
+//     let data;
+//     let business = await crudService.findOne('Business', {id: 1});
+//     if(business == null){
+//         throw CustomError({statusCode: 422, message: 'Set business infomation before export'}, res)
+//     }
 
-    body.business = business
-    data = await dataExport.excelExport(body)
-    res.send( {file: data+'.xlsx'});
-    res.end;
-}));
+//     body.business = business
+//     data = await dataExport.excelExport(body)
+//     res.send( {file: data+'.xlsx'});
+//     res.end;
+// }));
 
-router.post("/download",[Authenticator.auth], asyncWrapper(async(req, res)=> {
-    let body = req.body;
-    let data;
-    let business = await crudService.findOne('Business', {id: 1});
-    body.business = business
-    data = await dataExport.excelExport(body)
-    res.send({file: data+'.xlsx'});
-    res.end;
-}));
+// router.post("/download",[Authenticator.auth], asyncWrapper(async(req, res)=> {
+//     let body = req.body;
+//     let data;
+//     let business = await crudService.findOne('Business', {id: 1});
+//     body.business = business
+//     data = await dataExport.excelExport(body)
+//     res.send({file: data+'.xlsx'});
+//     res.end;
+// }));
 
 router.get("/download", function (req, res) {
     let filePath = path.resolve(__dirname, '..', 'download',req.query.file)

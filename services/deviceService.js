@@ -1,15 +1,12 @@
 const Sequelize   =  require('sequelize');
 const Op  = Sequelize.Op
 const Printer = require('printer')
-const path = require('path')
 const Moment = require('moment');
 
 const scanner = require('../helpers/barcode')
 const printer = require('../helpers/printer')
-const DatabaseFunctions = require('../helpers/crud')
 const config = require('../config');
 
-const crudService = new DatabaseFunctions()
 
 module.exports = class DeviceService{ 
     async printerConnected(){
