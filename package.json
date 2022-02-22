@@ -6,6 +6,9 @@
   "engines": {
     "node": "10.x"
   },
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "bcryptjs": "^2.4.3",
@@ -32,9 +35,6 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC"
 }
