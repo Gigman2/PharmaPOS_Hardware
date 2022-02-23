@@ -115,10 +115,14 @@ module.exports = class DeviceService{
 
     async scannersInfo(){
         let scanners = await scanner.devices()
-        let activeScanners = scanners.find(item => item.product !== undefined)
-        if(activeScanners instanceof Object){
-            activeScanners = [activeScanners]
-        }
-        return activeScanners
+        if(scanners){
+            let activeScanners = scanners.find(item => item.product !== undefined)
+            if(activeScanners instanceof Object){
+                activeScanners = [activeScanners]
+            }
+            return activeScanners
+        } 
+        return null
+
     }
 }

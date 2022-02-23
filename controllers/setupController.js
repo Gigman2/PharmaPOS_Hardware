@@ -16,7 +16,6 @@ router.post("/print", asyncWrapper(async(req, res)=> {
     res.json({message: 'Result', result: data});
 }));
 
-
 router.get("/barcode", asyncWrapper(async(req, res) => {
     let data = await deviceService.scannersInfo()
     res.json({message: 'Result', result: data});

@@ -12,6 +12,7 @@ module.exports = {
     },
 
     scanner: () => {
+        console.log(this.devices)
         let scanner = new UsbScanner({
             vendorId: config.scanner.vendorId,
             productId: config.scanner.productId
