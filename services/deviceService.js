@@ -22,7 +22,7 @@ module.exports = class DeviceService{
         printer.alignCenter()
         printer.bold(true);
         printer.setTextSize(1,1);
-        // await printer.printImage(data.business.logo); 
+
         printer.newLine();
         if(data.business){
             printer.print(data.business.name); 
@@ -31,7 +31,7 @@ module.exports = class DeviceService{
             printer.newLine();
             printer.bold(false);
             printer.setTextNormal();
-            printer.print('Addr: '+data.business.address + ' | '+'Email: '+ data.business.email+ ' | '+'Tele: '+ data.business.phone+' / 0203414477');  
+            printer.print('Addr: ' + data.business.address + ' | '+'Email: '+ data.business.email+ ' | '+'Tele: '+ data.business.phone+' / 0203414477');  
             printer.newLine();
         }
 

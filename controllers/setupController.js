@@ -12,7 +12,7 @@ router.get("/printer", asyncWrapper(async(req, res)=> {
 
 router.post("/print", asyncWrapper(async(req, res)=> {
     let data = req.body;
-    await deviceService.printReceipt({...data.data})
+    await deviceService.printReceipt({...data})
     res.json({message: 'Result', result: data});
 }));
 

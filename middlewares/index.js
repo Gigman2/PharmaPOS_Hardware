@@ -11,7 +11,7 @@ module.exports = (app) => {
     app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
     app.use(morgan("common"))
     app.use(cors())
-    app.use(helmet())   
+    app.use(helmet())
 }
 
 
