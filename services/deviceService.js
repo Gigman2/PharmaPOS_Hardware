@@ -49,18 +49,18 @@ module.exports = class DeviceService{
         printer.bold(true);
         printer.tableCustom([
             {text: 'NAME', align: "LEFT", width:0.4, bold: true},
-            {text: 'RATE', align: "CENTER", width:0.2, bold: true},
-            {text: 'QTY', align: "CENTER", width:0.1, bold: true},
-            {text: 'AMT', align: "RIGHT", width:0.2, bold: true}
+            {text: 'W', align: "CENTER", width:0.2, bold: true},
+            {text: 'R', align: "CENTER", width:0.1, bold: true},
+            {text: 'Total', align: "RIGHT", width:0.2, bold: true}
         ])
         
         printer.bold(false); 
         if(data.transaction){
             data.transaction.products.forEach(item => {
                 let row = [
-                    {text: item.product.name, align: "LEFT", width:0.4},
-                    {text: item.price, align: "CENTER", width:0.2},
-                    {text: item.quantity, align: "CENTER", width:0.1},
+                    {text: item.product.name, align: "LEFT", width:0.3},
+                    {text: `${item.quantity}•${item.wprice}`, align: "CENTER", width:0.2},
+                    {text: `${item.retail}•${item.price}`, align: "CENTER", width:0.2},
                     {text: item.total, align: "RIGHT", width:0.2}
                 ]; 
 
