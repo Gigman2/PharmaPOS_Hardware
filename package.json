@@ -33,6 +33,7 @@
     "socket.io": "^4.4.1",
     "socket.io-client": "^4.4.1",
     "usb-barcode-scanner": "^1.0.2",
+    "usb-barcode-scanner-2": "^1.0.3",
     "winston": "^3.3.3"
   },
   "devDependencies": {},

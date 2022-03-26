@@ -1,4 +1,4 @@
-const { getDevices, getDevice, UsbScanner } = require('usb-barcode-scanner');
+const { getDevices, getDevice, UsbScanner } = require('usb-barcode-scanner-2');
 const config = require('../config')
 module.exports = {
     devices: () => {

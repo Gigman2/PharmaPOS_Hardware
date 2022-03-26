@@ -30,7 +30,7 @@ module.exports = class DeviceService{
             printer.newLine();
             printer.bold(false);
             printer.setTextNormal();
-            printer.print('Addr: ' + data.business.address + ' | '+'Email: '+ data.business.email + ' | '+'Tele: '+ data.business.phone+' / 0203414477');  
+            printer.print('Addr: ' + data.business.address + ' | '+'Email: '+ data.business.email + ' | '+'Tele: '+ data.business.phone+' / 0207147236');  
             printer.newLine();
         }
 
