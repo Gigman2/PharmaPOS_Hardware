@@ -1,5 +1,3 @@
-const Sequelize   =  require('sequelize');
-const Op  = Sequelize.Op
 const Printer = require('printer')
 const Moment = require('moment');
 
@@ -19,10 +17,11 @@ module.exports = class DeviceService{
     }
 
     async printReceipt(data){
+        data.business.logo = path.resolve(__dirname, '..', 'uploads', 'najiland.jpg');
         printer.alignCenter()
         printer.bold(true);
         printer.setTextSize(1,1);
-
+        await printer.printImage(data.business.logo); 
         printer.newLine();
         if(data.business){
             printer.print(data.business.name); 
@@ -31,7 +30,7 @@ module.exports = class DeviceService{
             printer.newLine();
             printer.bold(false);
             printer.setTextNormal();
-            printer.print('Addr: ' + data.business.address + ' | '+'Email: '+ data.business.email+ ' | '+'Tele: '+ data.business.phone+' / 0203414477');  
+            printer.print('Addr: ' + data.business.address + ' | '+'Email: '+ data.business.email + ' | '+'Tele: '+ data.business.phone+' / 0203414477');  
             printer.newLine();
         }
 
